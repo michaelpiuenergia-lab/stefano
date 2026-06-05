@@ -236,7 +236,7 @@ export default function Services({ onOpenQuote }: ServicesProps) {
                             exit={{ opacity: 0, height: 0 }}
                             transition={{
                               duration: 0.4,
-                              ease: [0.22, 1, 0.36, 1],
+                              ease: [0.22, 1, 0.36, 1] as const,
                             }}
                             className="block overflow-hidden"
                           >
@@ -275,7 +275,7 @@ export default function Services({ onOpenQuote }: ServicesProps) {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as const }}
                 >
                   <span className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[4px] text-gold-light">
                     <span className="h-px w-8 bg-gold-light" />

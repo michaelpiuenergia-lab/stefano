@@ -178,7 +178,7 @@ export default function FAQ() {
                   >
                     <motion.span
                       animate={{ rotate: isOpen ? 135 : 0 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
                       className="flex"
                     >
                       <Plus className="h-5 w-5" strokeWidth={1.5} />
@@ -193,7 +193,7 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
                       className="overflow-hidden"
                     >
                       <div className="px-6 md:px-8">

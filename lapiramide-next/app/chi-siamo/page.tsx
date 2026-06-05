@@ -110,7 +110,7 @@ function ChiSiamoHero() {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             className="mb-6 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold-light"
           >
             <span className="h-px w-10 bg-gold-light" />
@@ -121,7 +121,7 @@ function ChiSiamoHero() {
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
             className="max-w-5xl font-serif text-5xl font-semibold leading-[1.04] tracking-tight [text-shadow:0_4px_50px_rgba(0,0,0,0.85)] md:text-7xl lg:text-8xl"
           >
             La storia de{" "}
@@ -133,7 +133,7 @@ function ChiSiamoHero() {
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] as const }}
             className="mt-8 max-w-2xl text-lg leading-relaxed text-white/70 [text-shadow:0_2px_24px_rgba(0,0,0,0.8)] md:text-xl"
           >
             Nasciamo dalla convinzione che il marketing locale meritasse più cura, più attenzione e risultati concreti misurabili.
@@ -302,7 +302,7 @@ function StatsScene() {
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-16 font-serif text-4xl font-semibold leading-[1.06] tracking-tight md:text-6xl"
         >
           I numeri che ci{" "}
@@ -368,7 +368,7 @@ function ValoriScene() {
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-12 font-serif text-4xl font-semibold leading-[1.06] tracking-tight md:text-6xl"
         >
           I nostri{" "}
@@ -435,7 +435,7 @@ function SceglierciScene() {
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-12 font-serif text-4xl font-semibold leading-[1.06] tracking-tight md:text-6xl"
         >
           Perché{" "}

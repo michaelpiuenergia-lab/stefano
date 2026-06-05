@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "cd lapiramide-next && npm install",
+  "buildCommand": "cd lapiramide-next && npm run build",
+  "outputDirectory": "lapiramide-next/out2"
+}
