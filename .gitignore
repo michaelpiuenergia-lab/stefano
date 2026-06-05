@@ -1,0 +1,42 @@
+# Dipendenze
+node_modules/
+**/node_modules/
+
+# Build Next.js
+.next/
+**/.next/
+out/
+**/out/
+out2/
+**/out2/
+.turbo/
+**/.turbo/
+
+# Netlify / deploy
+.netlify/
+**/.netlify/
+
+# Archivi pesanti
+*.zip
+
+# Video pesanti (restano in locale, esclusi dal repo)
+*.mp4
+
+# Tooling / temporanei
+_igtmp/
+_*.mjs
+_*.png
+*.log
+
+# Config locale Claude / editor
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Variabili d'ambiente
+.env
+.env.*
+**/.env
+**/.env.*

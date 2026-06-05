@@ -1,0 +1,62 @@
+import { ArrowRight } from "lucide-react";
+
+export default function Hero() {
+  return (
+    <section id="top" className="relative bg-black text-white overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-gold/10 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-gold/5 blur-[100px]" />
+        {/* Particelle dorate - nascoste su mobile */}
+        <div className="hidden md:block float-particle w-2 h-2 top-[15%] left-[10%]" style={{ animationDelay: "0s, 0s" }} />
+        <div className="hidden md:block float-particle w-3 h-3 top-[25%] right-[15%]" style={{ animationDelay: "2s, 1s" }} />
+        <div className="hidden md:block float-particle w-1.5 h-1.5 bottom-[20%] left-[20%]" style={{ animationDelay: "4s, 0.5s" }} />
+        <div className="hidden md:block float-particle w-2.5 h-2.5 bottom-[30%] right-[10%]" style={{ animationDelay: "1s, 2s" }} />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-5 pt-20 pb-8 md:pt-28 md:pb-10 lg:pt-32 lg:pb-14 grid lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 items-center">
+        <div className="reveal order-2 lg:order-1">
+          <span className="inline-flex items-center gap-3 text-[11px] font-bold tracking-[2px] uppercase text-gold-light mb-4 md:mb-5">
+            <span className="w-8 h-px bg-gold-light" />
+            Marketing locale
+          </span>
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-[52px] font-semibold leading-[1.1] mb-4 md:mb-5">
+            Portiamo clienti reali nel tuo negozio,{" "}
+            <em className="text-gold-light not-italic">partendo dal tuo territorio.</em>
+          </h1>
+          <p className="font-serif text-base md:text-xl text-stone-300 mb-2 md:mb-3">
+            Distribuzione volantini, grafica pubblicitaria, social media e siti web per attività e aziende.
+          </p>
+          <p className="text-stone-400 text-sm md:text-base max-w-lg mb-5 md:mb-6">
+            Costruiamo campagne coordinate tra territorio e digitale: messaggio chiaro, immagine raffinata, distribuzione controllata e contatti reali.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/393457340981?text=Salve,%20vorrei%20una%20strategia%20gratuita%20per%20la%20mia%20attivita"
+              className="shimmer-border inline-flex items-center justify-center gap-2 px-5 md:px-6 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide bg-gradient-to-br from-gold-light via-gold to-gold-dark text-dark shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition"
+            >
+              Richiedi una strategia <ArrowRight size={16} />
+            </a>
+            <a
+              href="#servizi"
+              className="inline-flex items-center justify-center gap-2 px-5 md:px-6 py-3 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide border border-gold-light/60 text-gold-light hover:bg-white/5 transition"
+            >
+              Scopri i servizi
+            </a>
+          </div>
+        </div>
+
+        <div className="relative flex items-center justify-center reveal order-1 lg:order-2" aria-hidden="true">
+          {/* Solo un alone dorato sottile dietro il logo */}
+          <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-gold/5 blur-[60px]" />
+          
+          {/* Logo grande */}
+          <img
+            src="/img/logo-brand.png"
+            alt="La Piramide"
+            className="w-64 md:w-80 lg:w-[420px] relative z-10 drop-shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Escludi artefatti di build/deploy e binari dallo scan di Tailwind
+   (evita classi corrotte estratte da file binari come cache turbopack, zip, ecc.) */
+@source not "../out2";
+@source not "../.netlify";
+@source not "../public";
+@source not "../lapiramide-netlify.zip";
+
+:root {
+  --background: #f5f3ef;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --muted: #78716c;
+  --gold: #ca8a04;
+  --gold-light: #f2c14e;
+  --gold-dark: #92610a;
+  --dark: #0c0a09;
+  --border: #e7e5e4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-dark: var(--dark);
+  --color-border: var(--border);
+  --font-sans: var(--font-jost);
+  --font-serif: var(--font-bodoni);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effetto glow che segue il mouse sulle card scure */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+.glow-card::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201,168,76,0.18), transparent 60%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Particelle fluttuanti */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.15); }
+}
+
+.float-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-light), transparent 70%);
+  animation: float 8s ease-in-out infinite, pulse-glow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Shimmer sweep sui bottoni/bordi */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-border {
+  position: relative;
+}
+.shimmer-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: shimmer 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.shimmer-border:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .float-particle,
+  .shimmer-border::after {
+    transition: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .glow-card::before {
+    display: none;
+  }
+}
